@@ -54,9 +54,9 @@
             this.buttonSFC2 = new System.Windows.Forms.Button();
             this.buttonSFC1 = new System.Windows.Forms.Button();
             this.buttonDISM = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buttonIPConfig = new System.Windows.Forms.Button();
+            this.buttonPing = new System.Windows.Forms.Button();
+            this.buttonBattery = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -91,7 +91,7 @@
             this.button35 = new System.Windows.Forms.Button();
             this.button36 = new System.Windows.Forms.Button();
             this.buttonShutdown = new System.Windows.Forms.Button();
-            this.button37 = new System.Windows.Forms.Button();
+            this.buttonClear = new System.Windows.Forms.Button();
             this.BasicInfoPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -200,7 +200,7 @@
             // BasicInfoPanel
             // 
             this.BasicInfoPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.BasicInfoPanel.Controls.Add(this.button37);
+            this.BasicInfoPanel.Controls.Add(this.buttonClear);
             this.BasicInfoPanel.Controls.Add(this.buttonShutdown);
             this.BasicInfoPanel.Controls.Add(this.button25);
             this.BasicInfoPanel.Controls.Add(this.button26);
@@ -234,10 +234,10 @@
             this.BasicInfoPanel.Controls.Add(this.button12);
             this.BasicInfoPanel.Controls.Add(this.button5);
             this.BasicInfoPanel.Controls.Add(this.button6);
-            this.BasicInfoPanel.Controls.Add(this.button3);
+            this.BasicInfoPanel.Controls.Add(this.buttonBattery);
             this.BasicInfoPanel.Controls.Add(this.button4);
-            this.BasicInfoPanel.Controls.Add(this.button2);
-            this.BasicInfoPanel.Controls.Add(this.button1);
+            this.BasicInfoPanel.Controls.Add(this.buttonPing);
+            this.BasicInfoPanel.Controls.Add(this.buttonIPConfig);
             this.BasicInfoPanel.Controls.Add(this.buttonCupHolder);
             this.BasicInfoPanel.Controls.Add(this.buttonAutomount);
             this.BasicInfoPanel.Controls.Add(this.buttonReboot);
@@ -392,29 +392,37 @@
             this.buttonDISM.UseVisualStyleBackColor = true;
             this.buttonDISM.Click += new System.EventHandler(this.buttonDISM_Click);
             // 
-            // button1
+            // buttonIPConfig
             // 
-            this.button1.Location = new System.Drawing.Point(648, 538);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(89, 23);
-            this.button1.TabIndex = 30;
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonIPConfig.Location = new System.Drawing.Point(648, 538);
+            this.buttonIPConfig.Name = "buttonIPConfig";
+            this.buttonIPConfig.Size = new System.Drawing.Size(89, 23);
+            this.buttonIPConfig.TabIndex = 30;
+            this.buttonIPConfig.Text = "Local IPs";
+            this.buttonIPConfig.UseVisualStyleBackColor = true;
+            this.buttonIPConfig.Click += new System.EventHandler(this.buttonIPConfig_Click);
             // 
-            // button2
+            // buttonPing
             // 
-            this.button2.Location = new System.Drawing.Point(743, 538);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(89, 23);
-            this.button2.TabIndex = 31;
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonPing.Location = new System.Drawing.Point(743, 538);
+            this.buttonPing.Name = "buttonPing";
+            this.buttonPing.Size = new System.Drawing.Size(89, 23);
+            this.buttonPing.TabIndex = 31;
+            this.buttonPing.Text = "Ping 1.1.1.1";
+            this.buttonPing.UseVisualStyleBackColor = true;
+            this.buttonPing.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // buttonBattery
             // 
-            this.button3.Location = new System.Drawing.Point(743, 510);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(89, 23);
-            this.button3.TabIndex = 33;
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonBattery.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBattery.ForeColor = System.Drawing.Color.Orange;
+            this.buttonBattery.Location = new System.Drawing.Point(743, 510);
+            this.buttonBattery.Name = "buttonBattery";
+            this.buttonBattery.Size = new System.Drawing.Size(89, 23);
+            this.buttonBattery.TabIndex = 33;
+            this.buttonBattery.Text = "Battery Info";
+            this.buttonBattery.UseVisualStyleBackColor = true;
+            this.buttonBattery.Click += new System.EventHandler(this.buttonBattery_Click);
             // 
             // button4
             // 
@@ -690,13 +698,15 @@
             this.buttonShutdown.UseVisualStyleBackColor = true;
             this.buttonShutdown.Click += new System.EventHandler(this.buttonShutdown_Click);
             // 
-            // button37
+            // buttonClear
             // 
-            this.button37.Location = new System.Drawing.Point(648, 8);
-            this.button37.Name = "button37";
-            this.button37.Size = new System.Drawing.Size(184, 39);
-            this.button37.TabIndex = 67;
-            this.button37.UseVisualStyleBackColor = true;
+            this.buttonClear.Location = new System.Drawing.Point(648, 8);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(184, 39);
+            this.buttonClear.TabIndex = 67;
+            this.buttonClear.Text = "Clear";
+            this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
             // AppBase
             // 
@@ -777,11 +787,11 @@
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonBattery;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button37;
+        private System.Windows.Forms.Button buttonPing;
+        private System.Windows.Forms.Button buttonIPConfig;
+        private System.Windows.Forms.Button buttonClear;
     }
 }
 

@@ -94,7 +94,7 @@ namespace TechSupportSimplifier
         {
             try
             {
-                conSolo.StartProcess("chkdsk", "/?");
+                conSolo.StartProcess("chkdsk", "/f C:");
             }
             catch (Exception) { }
         }
@@ -192,6 +192,38 @@ namespace TechSupportSimplifier
             try
             {
                 conSolo.StartProcess("cmd", "/c shutdown /p /f");
+            }
+            catch (Exception) { }
+        }
+
+        private void buttonIPConfig_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                conSolo.StartProcess("ipconfig", "/all");
+            }
+            catch (Exception) { }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                conSolo.StartProcess("ping", "1.1.1.1");
+            }
+            catch (Exception) { }
+        }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            conSolo.ClearOutput();
+        }
+
+        private void buttonBattery_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                conSolo.StartProcess("cmd", "/c cd C:\\Windows\\system32 && powercfg /batteryreport && start battery-report.html");
             }
             catch (Exception) { }
         }
