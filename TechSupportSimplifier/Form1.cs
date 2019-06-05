@@ -205,7 +205,7 @@ namespace TechSupportSimplifier
             catch (Exception) { }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonPing_Click(object sender, EventArgs e)
         {
             try
             {
@@ -224,6 +224,60 @@ namespace TechSupportSimplifier
             try
             {
                 conSolo.StartProcess("cmd", "/c cd C:\\Windows\\system32 && powercfg /batteryreport && start battery-report.html");
+            }
+            catch (Exception) { }
+        }
+
+        private void buttonIP_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                conSolo.StartProcess("ipconfig", "/flushdns");
+            }
+            catch (Exception) { }
+        }
+
+        private void buttonWsReset_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                conSolo.StartProcess("wsreset", "");
+            }
+            catch (Exception) { }
+        }
+
+        private void buttonAdminOn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                conSolo.StartProcess("net", "user administrator /active:yes");
+            }
+            catch (Exception) { }
+        }
+
+        private void buttonRdpOn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                conSolo.StartProcess("reg", "add \"hklm\\system\\currentcontrolset\\control\\terminal server\" /f /v fDenyTSConnections /t REG_DWORD /d 0");
+            }
+            catch (Exception) { }
+        }
+
+        private void buttonAdminOff_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                conSolo.StartProcess("net", "user administrator /active:no");
+            }
+            catch (Exception) { }
+        }
+
+        private void buttonRdpOff_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                conSolo.StartProcess("reg", "add \"hklm\\system\\currentcontrolset\\control\\terminal server\" /f /v fDenyTSConnections /t REG_DWORD /d 1");
             }
             catch (Exception) { }
         }
