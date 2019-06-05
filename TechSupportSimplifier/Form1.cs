@@ -38,6 +38,10 @@ namespace TechSupportSimplifier
             textBoxLicense.Text = "sorry this is borked rn";
         }
 
+
+
+        // -- Something something make a new method for magicing processes. --
+
         private string runCmd(string exe, string args)
         {
             System.Diagnostics.Process proc = new System.Diagnostics.Process();
@@ -106,6 +110,8 @@ namespace TechSupportSimplifier
 
         private void buttonPUPs_Click(object sender, EventArgs e)
         {
+            // -- This is all borked because the console is stupid; I'll fix it later. --
+
             conSolo.StartProcess("wmic", "product");
             //string productOutput = runCmd("wmic", "product").ToLower();
             //if (productOutput.Contains("mcafee"))
@@ -168,6 +174,24 @@ namespace TechSupportSimplifier
             try
             {
                 conSolo.StartProcess("cmd", "/c shutdown /r");
+            }
+            catch (Exception) { }
+        }
+
+        private void buttonCrisis_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                conSolo.StartProcess("cmd", "/c echo Formatting C:\\... & echo Done!");
+            }
+            catch (Exception) { }
+        }
+
+        private void buttonShutdown_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                conSolo.StartProcess("cmd", "/c shutdown /p /f");
             }
             catch (Exception) { }
         }
