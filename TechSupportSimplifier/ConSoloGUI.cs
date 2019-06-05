@@ -21,8 +21,11 @@ namespace TechSupportSimplifier
 
         private void AppBase_Load(object sender, EventArgs e)
         {
+            
             textBoxCPU.Text = runCmd("wmic","cpu get name").Substring(43);
             textBoxFirmware.Text = runCmd("wmic","bios get biosversion").Substring(62);
+            textBoxSerial.Text = runCmd("wmic", "bios get serialnumber").Substring(0);
+            textBoxMaxMem.Text = runCmd("wmic", "memphysical get maxcapacity").Substring(0);
             textBoxUptime.Text = runCmd("cmd", "/c systeminfo | find \"System Boot Time: \"").Substring(27);
             textBoxVersion.Text = runCmd("cmd","/c ver");
 
@@ -36,6 +39,12 @@ namespace TechSupportSimplifier
             }
 
             textBoxLicense.Text = "sorry this is borked rn";
+
+            try
+            {
+                conSolo.StartProcess("cmd", "/c echo Be careful! These buttons are not to be played with. They can alter settings, delete files, change your version and deactivate Windows. Use them at your own risk.");
+            }
+            catch (Exception) { }
         }
 
 
@@ -278,6 +287,51 @@ namespace TechSupportSimplifier
             try
             {
                 conSolo.StartProcess("reg", "add \"hklm\\system\\currentcontrolset\\control\\terminal server\" /f /v fDenyTSConnections /t REG_DWORD /d 1");
+            }
+            catch (Exception) { }
+        }
+
+        private void buttonWinPro_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                conSolo.StartProcess("cmd", "/c slmgr /upk && slmgr /ipk VK7JG-NPHTM-C97JM-9MPGT-3V66T");
+            }
+            catch (Exception) { }
+        }
+
+        private void buttonWinEdu_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                conSolo.StartProcess("cmd", "/c slmgr /upk && slmgr /ipk YNMGQ-8RYV3-4PGQ3-C8XTP-7CFBY");
+            }
+            catch (Exception) { }
+        }
+
+        private void buttonWinEnt_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                conSolo.StartProcess("cmd", "/c slmgr /upk && slmgr /ipk DXG7C-N36C4-C4HTG-X4T3X-2YV77");
+            }
+            catch (Exception) { }
+        }
+
+        private void buttonWinPfW_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                conSolo.StartProcess("cmd", "/c slmgr /upk && slmgr /ipk XGVPP-NMH47-7TTHJ-W3FW7-8HV2C");
+            }
+            catch (Exception) { }
+        }
+
+        private void buttonPrintSpool_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                conSolo.StartProcess("cmd", "/c net stop spooler && del %systemroot%\\System32\\spool\\printers\\* /Q && net start spooler");
             }
             catch (Exception) { }
         }

@@ -66,12 +66,12 @@
             this.button20 = new System.Windows.Forms.Button();
             this.button21 = new System.Windows.Forms.Button();
             this.button22 = new System.Windows.Forms.Button();
-            this.button23 = new System.Windows.Forms.Button();
-            this.button24 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.buttonWinPfW = new System.Windows.Forms.Button();
+            this.buttonWinEnt = new System.Windows.Forms.Button();
+            this.buttonWinPro = new System.Windows.Forms.Button();
+            this.buttonWinEdu = new System.Windows.Forms.Button();
             this.buttonAdminOff = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
+            this.buttonPrintSpool = new System.Windows.Forms.Button();
             this.buttonRdpOn = new System.Windows.Forms.Button();
             this.buttonRdpOff = new System.Windows.Forms.Button();
             this.buttonAdminOn = new System.Windows.Forms.Button();
@@ -92,6 +92,10 @@
             this.buttonSFC2 = new System.Windows.Forms.Button();
             this.buttonSFC1 = new System.Windows.Forms.Button();
             this.buttonDISM = new System.Windows.Forms.Button();
+            this.textBoxSerial = new System.Windows.Forms.TextBox();
+            this.labelSerial = new System.Windows.Forms.Label();
+            this.textBoxMaxMem = new System.Windows.Forms.TextBox();
+            this.labelMaxMem = new System.Windows.Forms.Label();
             this.BasicInfoPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -107,7 +111,7 @@
             // labelLicense
             // 
             this.labelLicense.AutoSize = true;
-            this.labelLicense.Location = new System.Drawing.Point(11, 141);
+            this.labelLicense.Location = new System.Drawing.Point(11, 190);
             this.labelLicense.Name = "labelLicense";
             this.labelLicense.Size = new System.Drawing.Size(47, 13);
             this.labelLicense.TabIndex = 2;
@@ -116,7 +120,7 @@
             // labelActivated
             // 
             this.labelActivated.AutoSize = true;
-            this.labelActivated.Location = new System.Drawing.Point(3, 115);
+            this.labelActivated.Location = new System.Drawing.Point(3, 164);
             this.labelActivated.Name = "labelActivated";
             this.labelActivated.Size = new System.Drawing.Size(55, 13);
             this.labelActivated.TabIndex = 0;
@@ -140,7 +144,7 @@
             // 
             // textBoxUptime
             // 
-            this.textBoxUptime.Location = new System.Drawing.Point(64, 61);
+            this.textBoxUptime.Location = new System.Drawing.Point(64, 110);
             this.textBoxUptime.Name = "textBoxUptime";
             this.textBoxUptime.ReadOnly = true;
             this.textBoxUptime.Size = new System.Drawing.Size(578, 20);
@@ -148,7 +152,7 @@
             // 
             // textBoxVersion
             // 
-            this.textBoxVersion.Location = new System.Drawing.Point(64, 87);
+            this.textBoxVersion.Location = new System.Drawing.Point(64, 136);
             this.textBoxVersion.Name = "textBoxVersion";
             this.textBoxVersion.ReadOnly = true;
             this.textBoxVersion.Size = new System.Drawing.Size(578, 20);
@@ -156,7 +160,7 @@
             // 
             // textBoxActivated
             // 
-            this.textBoxActivated.Location = new System.Drawing.Point(64, 113);
+            this.textBoxActivated.Location = new System.Drawing.Point(64, 162);
             this.textBoxActivated.Name = "textBoxActivated";
             this.textBoxActivated.ReadOnly = true;
             this.textBoxActivated.Size = new System.Drawing.Size(578, 20);
@@ -164,7 +168,7 @@
             // 
             // textBoxLicense
             // 
-            this.textBoxLicense.Location = new System.Drawing.Point(64, 139);
+            this.textBoxLicense.Location = new System.Drawing.Point(64, 188);
             this.textBoxLicense.Name = "textBoxLicense";
             this.textBoxLicense.ReadOnly = true;
             this.textBoxLicense.Size = new System.Drawing.Size(578, 20);
@@ -173,7 +177,7 @@
             // labelVersion
             // 
             this.labelVersion.AutoSize = true;
-            this.labelVersion.Location = new System.Drawing.Point(13, 90);
+            this.labelVersion.Location = new System.Drawing.Point(13, 139);
             this.labelVersion.Name = "labelVersion";
             this.labelVersion.Size = new System.Drawing.Size(45, 13);
             this.labelVersion.TabIndex = 15;
@@ -182,7 +186,7 @@
             // labelUptime
             // 
             this.labelUptime.AutoSize = true;
-            this.labelUptime.Location = new System.Drawing.Point(15, 64);
+            this.labelUptime.Location = new System.Drawing.Point(15, 113);
             this.labelUptime.Name = "labelUptime";
             this.labelUptime.Size = new System.Drawing.Size(43, 13);
             this.labelUptime.TabIndex = 16;
@@ -200,6 +204,10 @@
             // BasicInfoPanel
             // 
             this.BasicInfoPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.BasicInfoPanel.Controls.Add(this.textBoxMaxMem);
+            this.BasicInfoPanel.Controls.Add(this.labelMaxMem);
+            this.BasicInfoPanel.Controls.Add(this.textBoxSerial);
+            this.BasicInfoPanel.Controls.Add(this.labelSerial);
             this.BasicInfoPanel.Controls.Add(this.buttonClear);
             this.BasicInfoPanel.Controls.Add(this.buttonShutdown);
             this.BasicInfoPanel.Controls.Add(this.button25);
@@ -224,12 +232,12 @@
             this.BasicInfoPanel.Controls.Add(this.button20);
             this.BasicInfoPanel.Controls.Add(this.button21);
             this.BasicInfoPanel.Controls.Add(this.button22);
-            this.BasicInfoPanel.Controls.Add(this.button23);
-            this.BasicInfoPanel.Controls.Add(this.button24);
-            this.BasicInfoPanel.Controls.Add(this.button7);
-            this.BasicInfoPanel.Controls.Add(this.button8);
+            this.BasicInfoPanel.Controls.Add(this.buttonWinPfW);
+            this.BasicInfoPanel.Controls.Add(this.buttonWinEnt);
+            this.BasicInfoPanel.Controls.Add(this.buttonWinPro);
+            this.BasicInfoPanel.Controls.Add(this.buttonWinEdu);
             this.BasicInfoPanel.Controls.Add(this.buttonAdminOff);
-            this.BasicInfoPanel.Controls.Add(this.button10);
+            this.BasicInfoPanel.Controls.Add(this.buttonPrintSpool);
             this.BasicInfoPanel.Controls.Add(this.buttonRdpOn);
             this.BasicInfoPanel.Controls.Add(this.buttonRdpOff);
             this.BasicInfoPanel.Controls.Add(this.buttonAdminOn);
@@ -463,37 +471,45 @@
             this.button22.TabIndex = 44;
             this.button22.UseVisualStyleBackColor = true;
             // 
-            // button23
+            // buttonWinPfW
             // 
-            this.button23.Location = new System.Drawing.Point(743, 368);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(89, 23);
-            this.button23.TabIndex = 43;
-            this.button23.UseVisualStyleBackColor = true;
+            this.buttonWinPfW.Location = new System.Drawing.Point(743, 368);
+            this.buttonWinPfW.Name = "buttonWinPfW";
+            this.buttonWinPfW.Size = new System.Drawing.Size(89, 23);
+            this.buttonWinPfW.TabIndex = 43;
+            this.buttonWinPfW.Text = "PfW Upgrade";
+            this.buttonWinPfW.UseVisualStyleBackColor = true;
+            this.buttonWinPfW.Click += new System.EventHandler(this.buttonWinPfW_Click);
             // 
-            // button24
+            // buttonWinEnt
             // 
-            this.button24.Location = new System.Drawing.Point(648, 368);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(89, 23);
-            this.button24.TabIndex = 42;
-            this.button24.UseVisualStyleBackColor = true;
+            this.buttonWinEnt.Location = new System.Drawing.Point(648, 368);
+            this.buttonWinEnt.Name = "buttonWinEnt";
+            this.buttonWinEnt.Size = new System.Drawing.Size(89, 23);
+            this.buttonWinEnt.TabIndex = 42;
+            this.buttonWinEnt.Text = "Ent Upgrade";
+            this.buttonWinEnt.UseVisualStyleBackColor = true;
+            this.buttonWinEnt.Click += new System.EventHandler(this.buttonWinEnt_Click);
             // 
-            // button7
+            // buttonWinPro
             // 
-            this.button7.Location = new System.Drawing.Point(743, 395);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(89, 23);
-            this.button7.TabIndex = 41;
-            this.button7.UseVisualStyleBackColor = true;
+            this.buttonWinPro.Location = new System.Drawing.Point(743, 395);
+            this.buttonWinPro.Name = "buttonWinPro";
+            this.buttonWinPro.Size = new System.Drawing.Size(89, 23);
+            this.buttonWinPro.TabIndex = 41;
+            this.buttonWinPro.Text = "Pro Upgrade";
+            this.buttonWinPro.UseVisualStyleBackColor = true;
+            this.buttonWinPro.Click += new System.EventHandler(this.buttonWinPro_Click);
             // 
-            // button8
+            // buttonWinEdu
             // 
-            this.button8.Location = new System.Drawing.Point(648, 395);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(89, 23);
-            this.button8.TabIndex = 40;
-            this.button8.UseVisualStyleBackColor = true;
+            this.buttonWinEdu.Location = new System.Drawing.Point(648, 395);
+            this.buttonWinEdu.Name = "buttonWinEdu";
+            this.buttonWinEdu.Size = new System.Drawing.Size(89, 23);
+            this.buttonWinEdu.TabIndex = 40;
+            this.buttonWinEdu.Text = "Edu Upgrade";
+            this.buttonWinEdu.UseVisualStyleBackColor = true;
+            this.buttonWinEdu.Click += new System.EventHandler(this.buttonWinEdu_Click);
             // 
             // buttonAdminOff
             // 
@@ -505,13 +521,15 @@
             this.buttonAdminOff.UseVisualStyleBackColor = true;
             this.buttonAdminOff.Click += new System.EventHandler(this.buttonAdminOff_Click);
             // 
-            // button10
+            // buttonPrintSpool
             // 
-            this.button10.Location = new System.Drawing.Point(743, 482);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(89, 23);
-            this.button10.TabIndex = 38;
-            this.button10.UseVisualStyleBackColor = true;
+            this.buttonPrintSpool.Location = new System.Drawing.Point(743, 482);
+            this.buttonPrintSpool.Name = "buttonPrintSpool";
+            this.buttonPrintSpool.Size = new System.Drawing.Size(89, 23);
+            this.buttonPrintSpool.TabIndex = 38;
+            this.buttonPrintSpool.Text = "Restart Spool";
+            this.buttonPrintSpool.UseVisualStyleBackColor = true;
+            this.buttonPrintSpool.Click += new System.EventHandler(this.buttonPrintSpool_Click);
             // 
             // buttonRdpOn
             // 
@@ -597,7 +615,7 @@
             // 
             // buttonCupHolder
             // 
-            this.buttonCupHolder.Location = new System.Drawing.Point(3, 397);
+            this.buttonCupHolder.Location = new System.Drawing.Point(3, 453);
             this.buttonCupHolder.Name = "buttonCupHolder";
             this.buttonCupHolder.Size = new System.Drawing.Size(89, 23);
             this.buttonCupHolder.TabIndex = 29;
@@ -607,7 +625,7 @@
             // 
             // buttonAutomount
             // 
-            this.buttonAutomount.Location = new System.Drawing.Point(3, 368);
+            this.buttonAutomount.Location = new System.Drawing.Point(3, 424);
             this.buttonAutomount.Name = "buttonAutomount";
             this.buttonAutomount.Size = new System.Drawing.Size(89, 23);
             this.buttonAutomount.TabIndex = 28;
@@ -617,9 +635,9 @@
             // 
             // buttonReboot
             // 
-            this.buttonReboot.Location = new System.Drawing.Point(3, 426);
+            this.buttonReboot.Location = new System.Drawing.Point(3, 482);
             this.buttonReboot.Name = "buttonReboot";
-            this.buttonReboot.Size = new System.Drawing.Size(89, 79);
+            this.buttonReboot.Size = new System.Drawing.Size(89, 23);
             this.buttonReboot.TabIndex = 27;
             this.buttonReboot.Text = "Reboot";
             this.buttonReboot.UseVisualStyleBackColor = true;
@@ -629,18 +647,18 @@
             // 
             this.conSolo.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.conSolo.IsInputEnabled = true;
-            this.conSolo.Location = new System.Drawing.Point(99, 165);
+            this.conSolo.Location = new System.Drawing.Point(99, 221);
             this.conSolo.Name = "conSolo";
             this.conSolo.SendKeyboardCommandsToProcess = false;
             this.conSolo.ShowDiagnostics = false;
-            this.conSolo.Size = new System.Drawing.Size(543, 396);
+            this.conSolo.Size = new System.Drawing.Size(543, 340);
             this.conSolo.TabIndex = 26;
             // 
             // buttonPUPs
             // 
             this.buttonPUPs.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonPUPs.ForeColor = System.Drawing.Color.Orange;
-            this.buttonPUPs.Location = new System.Drawing.Point(3, 339);
+            this.buttonPUPs.Location = new System.Drawing.Point(3, 395);
             this.buttonPUPs.Name = "buttonPUPs";
             this.buttonPUPs.Size = new System.Drawing.Size(89, 23);
             this.buttonPUPs.TabIndex = 25;
@@ -650,7 +668,7 @@
             // 
             // buttonNetSh
             // 
-            this.buttonNetSh.Location = new System.Drawing.Point(3, 310);
+            this.buttonNetSh.Location = new System.Drawing.Point(3, 366);
             this.buttonNetSh.Name = "buttonNetSh";
             this.buttonNetSh.Size = new System.Drawing.Size(89, 23);
             this.buttonNetSh.TabIndex = 24;
@@ -672,7 +690,7 @@
             // 
             // buttonChkDsk
             // 
-            this.buttonChkDsk.Location = new System.Drawing.Point(3, 281);
+            this.buttonChkDsk.Location = new System.Drawing.Point(3, 337);
             this.buttonChkDsk.Name = "buttonChkDsk";
             this.buttonChkDsk.Size = new System.Drawing.Size(89, 23);
             this.buttonChkDsk.TabIndex = 22;
@@ -682,7 +700,7 @@
             // 
             // buttonUEFI
             // 
-            this.buttonUEFI.Location = new System.Drawing.Point(3, 252);
+            this.buttonUEFI.Location = new System.Drawing.Point(3, 308);
             this.buttonUEFI.Name = "buttonUEFI";
             this.buttonUEFI.Size = new System.Drawing.Size(89, 23);
             this.buttonUEFI.TabIndex = 21;
@@ -692,7 +710,7 @@
             // 
             // buttonSFC2
             // 
-            this.buttonSFC2.Location = new System.Drawing.Point(3, 223);
+            this.buttonSFC2.Location = new System.Drawing.Point(3, 279);
             this.buttonSFC2.Name = "buttonSFC2";
             this.buttonSFC2.Size = new System.Drawing.Size(89, 23);
             this.buttonSFC2.TabIndex = 20;
@@ -702,7 +720,7 @@
             // 
             // buttonSFC1
             // 
-            this.buttonSFC1.Location = new System.Drawing.Point(3, 194);
+            this.buttonSFC1.Location = new System.Drawing.Point(3, 250);
             this.buttonSFC1.Name = "buttonSFC1";
             this.buttonSFC1.Size = new System.Drawing.Size(89, 23);
             this.buttonSFC1.TabIndex = 19;
@@ -712,13 +730,47 @@
             // 
             // buttonDISM
             // 
-            this.buttonDISM.Location = new System.Drawing.Point(3, 165);
+            this.buttonDISM.Location = new System.Drawing.Point(3, 221);
             this.buttonDISM.Name = "buttonDISM";
             this.buttonDISM.Size = new System.Drawing.Size(89, 23);
             this.buttonDISM.TabIndex = 18;
             this.buttonDISM.Text = "DISM Repair";
             this.buttonDISM.UseVisualStyleBackColor = true;
             this.buttonDISM.Click += new System.EventHandler(this.buttonDISM_Click);
+            // 
+            // textBoxSerial
+            // 
+            this.textBoxSerial.Location = new System.Drawing.Point(64, 59);
+            this.textBoxSerial.Name = "textBoxSerial";
+            this.textBoxSerial.ReadOnly = true;
+            this.textBoxSerial.Size = new System.Drawing.Size(578, 20);
+            this.textBoxSerial.TabIndex = 69;
+            // 
+            // labelSerial
+            // 
+            this.labelSerial.AutoSize = true;
+            this.labelSerial.Location = new System.Drawing.Point(22, 63);
+            this.labelSerial.Name = "labelSerial";
+            this.labelSerial.Size = new System.Drawing.Size(36, 13);
+            this.labelSerial.TabIndex = 68;
+            this.labelSerial.Text = "Serial:";
+            // 
+            // textBoxMaxMem
+            // 
+            this.textBoxMaxMem.Location = new System.Drawing.Point(64, 85);
+            this.textBoxMaxMem.Name = "textBoxMaxMem";
+            this.textBoxMaxMem.ReadOnly = true;
+            this.textBoxMaxMem.Size = new System.Drawing.Size(578, 20);
+            this.textBoxMaxMem.TabIndex = 71;
+            // 
+            // labelMaxMem
+            // 
+            this.labelMaxMem.AutoSize = true;
+            this.labelMaxMem.Location = new System.Drawing.Point(2, 87);
+            this.labelMaxMem.Name = "labelMaxMem";
+            this.labelMaxMem.Size = new System.Drawing.Size(56, 13);
+            this.labelMaxMem.TabIndex = 70;
+            this.labelMaxMem.Text = "Max Mem:";
             // 
             // AppBase
             // 
@@ -729,7 +781,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(850, 597);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(850, 597);
             this.Name = "AppBase";
             this.Text = "Not Microsoft Community Support App";
             this.Load += new System.EventHandler(this.AppBase_Load);
@@ -789,12 +843,12 @@
         private System.Windows.Forms.Button button20;
         private System.Windows.Forms.Button button21;
         private System.Windows.Forms.Button button22;
-        private System.Windows.Forms.Button button23;
-        private System.Windows.Forms.Button button24;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button buttonWinPfW;
+        private System.Windows.Forms.Button buttonWinEnt;
+        private System.Windows.Forms.Button buttonWinPro;
+        private System.Windows.Forms.Button buttonWinEdu;
         private System.Windows.Forms.Button buttonAdminOff;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button buttonPrintSpool;
         private System.Windows.Forms.Button buttonRdpOn;
         private System.Windows.Forms.Button buttonRdpOff;
         private System.Windows.Forms.Button buttonAdminOn;
@@ -804,6 +858,10 @@
         private System.Windows.Forms.Button buttonPing;
         private System.Windows.Forms.Button buttonIPConfig;
         private System.Windows.Forms.Button buttonClear;
+        private System.Windows.Forms.TextBox textBoxMaxMem;
+        private System.Windows.Forms.Label labelMaxMem;
+        private System.Windows.Forms.TextBox textBoxSerial;
+        private System.Windows.Forms.Label labelSerial;
     }
 }
 
