@@ -62,7 +62,7 @@
             this.button36 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
+            this.buttonMSIStart = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
             this.buttonExplorer = new System.Windows.Forms.Button();
             this.buttonDetails = new System.Windows.Forms.Button();
@@ -224,7 +224,7 @@
             this.BasicInfoPanel.Controls.Add(this.button36);
             this.BasicInfoPanel.Controls.Add(this.button13);
             this.BasicInfoPanel.Controls.Add(this.button14);
-            this.BasicInfoPanel.Controls.Add(this.button15);
+            this.BasicInfoPanel.Controls.Add(this.buttonMSIStart);
             this.BasicInfoPanel.Controls.Add(this.button16);
             this.BasicInfoPanel.Controls.Add(this.buttonExplorer);
             this.BasicInfoPanel.Controls.Add(this.buttonDetails);
@@ -441,13 +441,15 @@
             this.button14.TabIndex = 52;
             this.button14.UseVisualStyleBackColor = true;
             // 
-            // button15
+            // buttonMSIStart
             // 
-            this.button15.Location = new System.Drawing.Point(743, 254);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(89, 23);
-            this.button15.TabIndex = 51;
-            this.button15.UseVisualStyleBackColor = true;
+            this.buttonMSIStart.Location = new System.Drawing.Point(743, 254);
+            this.buttonMSIStart.Name = "buttonMSIStart";
+            this.buttonMSIStart.Size = new System.Drawing.Size(89, 23);
+            this.buttonMSIStart.TabIndex = 51;
+            this.buttonMSIStart.Text = "Start MSI SVC";
+            this.buttonMSIStart.UseVisualStyleBackColor = true;
+            this.buttonMSIStart.Click += new System.EventHandler(this.buttonMSIStart_Click);
             // 
             // button16
             // 
@@ -847,7 +849,7 @@
         private System.Windows.Forms.Button button36;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Button buttonMSIStart;
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Button buttonExplorer;
         private System.Windows.Forms.Button buttonDetails;

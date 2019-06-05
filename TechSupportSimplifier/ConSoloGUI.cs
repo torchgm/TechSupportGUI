@@ -389,5 +389,14 @@ namespace TechSupportSimplifier
             }
             catch (Exception) { }
         }
+
+        private void buttonMSIStart_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                conSolo.StartProcess("cmd", "/c reg add \"HKLM\\SYSTEM\\CurrentControlSet\\services\\msiserver\" /v Start /t REG_DWORD /d 2 /f && net start msiserver");
+            }
+            catch (Exception) { }
+        }
     }
 }
