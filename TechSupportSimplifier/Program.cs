@@ -16,7 +16,7 @@ namespace TechSupportSimplifier
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AppBase());
+             Application.Run(new AppBase());
         }
     }
 }

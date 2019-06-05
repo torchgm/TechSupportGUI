@@ -42,6 +42,10 @@
             this.labelUptime = new System.Windows.Forms.Label();
             this.labelCPU = new System.Windows.Forms.Label();
             this.BasicInfoPanel = new System.Windows.Forms.Panel();
+            this.textBoxMaxMem = new System.Windows.Forms.TextBox();
+            this.labelMaxMem = new System.Windows.Forms.Label();
+            this.textBoxSerial = new System.Windows.Forms.TextBox();
+            this.labelSerial = new System.Windows.Forms.Label();
             this.buttonClear = new System.Windows.Forms.Button();
             this.buttonShutdown = new System.Windows.Forms.Button();
             this.button25 = new System.Windows.Forms.Button();
@@ -60,12 +64,12 @@
             this.button14 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
-            this.button19 = new System.Windows.Forms.Button();
-            this.button20 = new System.Windows.Forms.Button();
-            this.button21 = new System.Windows.Forms.Button();
-            this.button22 = new System.Windows.Forms.Button();
+            this.buttonExplorer = new System.Windows.Forms.Button();
+            this.buttonDetails = new System.Windows.Forms.Button();
+            this.buttonReBCD = new System.Windows.Forms.Button();
+            this.buttonScanOS = new System.Windows.Forms.Button();
+            this.buttonFixBoot = new System.Windows.Forms.Button();
+            this.buttonFixMBR = new System.Windows.Forms.Button();
             this.buttonWinPfW = new System.Windows.Forms.Button();
             this.buttonWinEnt = new System.Windows.Forms.Button();
             this.buttonWinPro = new System.Windows.Forms.Button();
@@ -92,10 +96,6 @@
             this.buttonSFC2 = new System.Windows.Forms.Button();
             this.buttonSFC1 = new System.Windows.Forms.Button();
             this.buttonDISM = new System.Windows.Forms.Button();
-            this.textBoxSerial = new System.Windows.Forms.TextBox();
-            this.labelSerial = new System.Windows.Forms.Label();
-            this.textBoxMaxMem = new System.Windows.Forms.TextBox();
-            this.labelMaxMem = new System.Windows.Forms.Label();
             this.BasicInfoPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -226,12 +226,12 @@
             this.BasicInfoPanel.Controls.Add(this.button14);
             this.BasicInfoPanel.Controls.Add(this.button15);
             this.BasicInfoPanel.Controls.Add(this.button16);
-            this.BasicInfoPanel.Controls.Add(this.button17);
-            this.BasicInfoPanel.Controls.Add(this.button18);
-            this.BasicInfoPanel.Controls.Add(this.button19);
-            this.BasicInfoPanel.Controls.Add(this.button20);
-            this.BasicInfoPanel.Controls.Add(this.button21);
-            this.BasicInfoPanel.Controls.Add(this.button22);
+            this.BasicInfoPanel.Controls.Add(this.buttonExplorer);
+            this.BasicInfoPanel.Controls.Add(this.buttonDetails);
+            this.BasicInfoPanel.Controls.Add(this.buttonReBCD);
+            this.BasicInfoPanel.Controls.Add(this.buttonScanOS);
+            this.BasicInfoPanel.Controls.Add(this.buttonFixBoot);
+            this.BasicInfoPanel.Controls.Add(this.buttonFixMBR);
             this.BasicInfoPanel.Controls.Add(this.buttonWinPfW);
             this.BasicInfoPanel.Controls.Add(this.buttonWinEnt);
             this.BasicInfoPanel.Controls.Add(this.buttonWinPro);
@@ -274,6 +274,40 @@
             this.BasicInfoPanel.Name = "BasicInfoPanel";
             this.BasicInfoPanel.Size = new System.Drawing.Size(839, 568);
             this.BasicInfoPanel.TabIndex = 0;
+            // 
+            // textBoxMaxMem
+            // 
+            this.textBoxMaxMem.Location = new System.Drawing.Point(64, 85);
+            this.textBoxMaxMem.Name = "textBoxMaxMem";
+            this.textBoxMaxMem.ReadOnly = true;
+            this.textBoxMaxMem.Size = new System.Drawing.Size(578, 20);
+            this.textBoxMaxMem.TabIndex = 71;
+            // 
+            // labelMaxMem
+            // 
+            this.labelMaxMem.AutoSize = true;
+            this.labelMaxMem.Location = new System.Drawing.Point(2, 87);
+            this.labelMaxMem.Name = "labelMaxMem";
+            this.labelMaxMem.Size = new System.Drawing.Size(56, 13);
+            this.labelMaxMem.TabIndex = 70;
+            this.labelMaxMem.Text = "Max Mem:";
+            // 
+            // textBoxSerial
+            // 
+            this.textBoxSerial.Location = new System.Drawing.Point(64, 59);
+            this.textBoxSerial.Name = "textBoxSerial";
+            this.textBoxSerial.ReadOnly = true;
+            this.textBoxSerial.Size = new System.Drawing.Size(578, 20);
+            this.textBoxSerial.TabIndex = 69;
+            // 
+            // labelSerial
+            // 
+            this.labelSerial.AutoSize = true;
+            this.labelSerial.Location = new System.Drawing.Point(22, 63);
+            this.labelSerial.Name = "labelSerial";
+            this.labelSerial.Size = new System.Drawing.Size(36, 13);
+            this.labelSerial.TabIndex = 68;
+            this.labelSerial.Text = "Serial:";
             // 
             // buttonClear
             // 
@@ -423,53 +457,65 @@
             this.button16.TabIndex = 50;
             this.button16.UseVisualStyleBackColor = true;
             // 
-            // button17
+            // buttonExplorer
             // 
-            this.button17.Location = new System.Drawing.Point(743, 282);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(89, 23);
-            this.button17.TabIndex = 49;
-            this.button17.UseVisualStyleBackColor = true;
+            this.buttonExplorer.Location = new System.Drawing.Point(743, 282);
+            this.buttonExplorer.Name = "buttonExplorer";
+            this.buttonExplorer.Size = new System.Drawing.Size(89, 23);
+            this.buttonExplorer.TabIndex = 49;
+            this.buttonExplorer.Text = "Kill Explorer";
+            this.buttonExplorer.UseVisualStyleBackColor = true;
+            this.buttonExplorer.Click += new System.EventHandler(this.buttonExplorer_Click);
             // 
-            // button18
+            // buttonDetails
             // 
-            this.button18.Location = new System.Drawing.Point(648, 282);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(89, 23);
-            this.button18.TabIndex = 48;
-            this.button18.UseVisualStyleBackColor = true;
+            this.buttonDetails.Location = new System.Drawing.Point(648, 282);
+            this.buttonDetails.Name = "buttonDetails";
+            this.buttonDetails.Size = new System.Drawing.Size(89, 23);
+            this.buttonDetails.TabIndex = 48;
+            this.buttonDetails.Text = "System Details";
+            this.buttonDetails.UseVisualStyleBackColor = true;
+            this.buttonDetails.Click += new System.EventHandler(this.buttonDetails_Click);
             // 
-            // button19
+            // buttonReBCD
             // 
-            this.button19.Location = new System.Drawing.Point(743, 311);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(89, 23);
-            this.button19.TabIndex = 47;
-            this.button19.UseVisualStyleBackColor = true;
+            this.buttonReBCD.Location = new System.Drawing.Point(743, 311);
+            this.buttonReBCD.Name = "buttonReBCD";
+            this.buttonReBCD.Size = new System.Drawing.Size(89, 23);
+            this.buttonReBCD.TabIndex = 47;
+            this.buttonReBCD.Text = "Rebuild BCD";
+            this.buttonReBCD.UseVisualStyleBackColor = true;
+            this.buttonReBCD.Click += new System.EventHandler(this.buttonReBCD_Click);
             // 
-            // button20
+            // buttonScanOS
             // 
-            this.button20.Location = new System.Drawing.Point(648, 311);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(89, 23);
-            this.button20.TabIndex = 46;
-            this.button20.UseVisualStyleBackColor = true;
+            this.buttonScanOS.Location = new System.Drawing.Point(648, 311);
+            this.buttonScanOS.Name = "buttonScanOS";
+            this.buttonScanOS.Size = new System.Drawing.Size(89, 23);
+            this.buttonScanOS.TabIndex = 46;
+            this.buttonScanOS.Text = "Scan OS";
+            this.buttonScanOS.UseVisualStyleBackColor = true;
+            this.buttonScanOS.Click += new System.EventHandler(this.buttonScanOS_Click);
             // 
-            // button21
+            // buttonFixBoot
             // 
-            this.button21.Location = new System.Drawing.Point(743, 340);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(89, 23);
-            this.button21.TabIndex = 45;
-            this.button21.UseVisualStyleBackColor = true;
+            this.buttonFixBoot.Location = new System.Drawing.Point(743, 340);
+            this.buttonFixBoot.Name = "buttonFixBoot";
+            this.buttonFixBoot.Size = new System.Drawing.Size(89, 23);
+            this.buttonFixBoot.TabIndex = 45;
+            this.buttonFixBoot.Text = "Fix Boot";
+            this.buttonFixBoot.UseVisualStyleBackColor = true;
+            this.buttonFixBoot.Click += new System.EventHandler(this.buttonFixBoot_Click);
             // 
-            // button22
+            // buttonFixMBR
             // 
-            this.button22.Location = new System.Drawing.Point(648, 340);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(89, 23);
-            this.button22.TabIndex = 44;
-            this.button22.UseVisualStyleBackColor = true;
+            this.buttonFixMBR.Location = new System.Drawing.Point(648, 340);
+            this.buttonFixMBR.Name = "buttonFixMBR";
+            this.buttonFixMBR.Size = new System.Drawing.Size(89, 23);
+            this.buttonFixMBR.TabIndex = 44;
+            this.buttonFixMBR.Text = "Fix MBR";
+            this.buttonFixMBR.UseVisualStyleBackColor = true;
+            this.buttonFixMBR.Click += new System.EventHandler(this.buttonFixMBR_Click);
             // 
             // buttonWinPfW
             // 
@@ -738,40 +784,6 @@
             this.buttonDISM.UseVisualStyleBackColor = true;
             this.buttonDISM.Click += new System.EventHandler(this.buttonDISM_Click);
             // 
-            // textBoxSerial
-            // 
-            this.textBoxSerial.Location = new System.Drawing.Point(64, 59);
-            this.textBoxSerial.Name = "textBoxSerial";
-            this.textBoxSerial.ReadOnly = true;
-            this.textBoxSerial.Size = new System.Drawing.Size(578, 20);
-            this.textBoxSerial.TabIndex = 69;
-            // 
-            // labelSerial
-            // 
-            this.labelSerial.AutoSize = true;
-            this.labelSerial.Location = new System.Drawing.Point(22, 63);
-            this.labelSerial.Name = "labelSerial";
-            this.labelSerial.Size = new System.Drawing.Size(36, 13);
-            this.labelSerial.TabIndex = 68;
-            this.labelSerial.Text = "Serial:";
-            // 
-            // textBoxMaxMem
-            // 
-            this.textBoxMaxMem.Location = new System.Drawing.Point(64, 85);
-            this.textBoxMaxMem.Name = "textBoxMaxMem";
-            this.textBoxMaxMem.ReadOnly = true;
-            this.textBoxMaxMem.Size = new System.Drawing.Size(578, 20);
-            this.textBoxMaxMem.TabIndex = 71;
-            // 
-            // labelMaxMem
-            // 
-            this.labelMaxMem.AutoSize = true;
-            this.labelMaxMem.Location = new System.Drawing.Point(2, 87);
-            this.labelMaxMem.Name = "labelMaxMem";
-            this.labelMaxMem.Size = new System.Drawing.Size(56, 13);
-            this.labelMaxMem.TabIndex = 70;
-            this.labelMaxMem.Text = "Max Mem:";
-            // 
             // AppBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -837,12 +849,12 @@
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.Button button18;
-        private System.Windows.Forms.Button button19;
-        private System.Windows.Forms.Button button20;
-        private System.Windows.Forms.Button button21;
-        private System.Windows.Forms.Button button22;
+        private System.Windows.Forms.Button buttonExplorer;
+        private System.Windows.Forms.Button buttonDetails;
+        private System.Windows.Forms.Button buttonReBCD;
+        private System.Windows.Forms.Button buttonScanOS;
+        private System.Windows.Forms.Button buttonFixBoot;
+        private System.Windows.Forms.Button buttonFixMBR;
         private System.Windows.Forms.Button buttonWinPfW;
         private System.Windows.Forms.Button buttonWinEnt;
         private System.Windows.Forms.Button buttonWinPro;

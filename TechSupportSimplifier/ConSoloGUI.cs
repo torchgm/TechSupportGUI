@@ -335,5 +335,59 @@ namespace TechSupportSimplifier
             }
             catch (Exception) { }
         }
+
+        private void buttonReBCD_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                conSolo.StartProcess("bootrec", "/rebuildbcd");
+            }
+            catch (Exception) { }
+        }
+
+        private void buttonFixBoot_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                conSolo.StartProcess("bootrec", "/fixboot");
+            }
+            catch (Exception) { }
+        }
+
+        private void buttonFixMBR_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                conSolo.StartProcess("bootrec", "/fixmbr");
+            }
+            catch (Exception) { }
+        }
+
+        private void buttonScanOS_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                conSolo.StartProcess("bootrec", "/scanos");
+            }
+            catch (Exception) { }
+        }
+
+        private void buttonExplorer_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                conSolo.StartProcess("cmd", "/c taskkill /f /im explorer.exe && PING localhost -n 6 >NUL && start C:\\windows\\explorer");
+            }
+            catch (Exception) { }
+        }
+
+        private void buttonDetails_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                conSolo.StartProcess("wmic", "computersystem get model,name,manufacturer,systemtype");
+            }
+            catch (Exception) { }
+        }
     }
 }
