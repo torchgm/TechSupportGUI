@@ -98,7 +98,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="binaries\TSS.exe" />
     <Content Include="Console.ico" />
     <Content Include="msftdscrd.ico" />
   </ItemGroup>
