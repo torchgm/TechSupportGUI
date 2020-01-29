@@ -21,13 +21,36 @@ namespace TechSupportSimplifier
 
         private void AppBase_Load(object sender, EventArgs e)
         {
-            
-            textBoxCPU.Text = runCmd("wmic","cpu get name").Substring(43);
-            textBoxFirmware.Text = runCmd("wmic","bios get biosversion").Substring(62);
-            textBoxSerial.Text = runCmd("wmic", "bios get serialnumber").Substring(26);
-            textBoxMaxMem.Text = runCmd("wmic", "memphysical get maxcapacity").Substring(13);
-            textBoxUptime.Text = runCmd("cmd", "/c systeminfo | find \"System Boot Time: \"").Substring(27);
-            textBoxVersion.Text = runCmd("cmd","/c ver");
+            try
+            {
+                textBoxCPU.Text = runCmd("wmic", "cpu get name").Substring(43);
+            }
+            catch (Exception) { }
+            try
+            {
+                textBoxFirmware.Text = runCmd("wmic", "bios get biosversion").Substring(62);
+            }
+            catch (Exception) { }
+            try
+            {
+                textBoxSerial.Text = runCmd("wmic", "bios get serialnumber").Substring(26);
+            }
+            catch (Exception) { }
+            try
+            {
+                textBoxMaxMem.Text = runCmd("wmic", "memphysical get maxcapacity").Substring(13);
+            }
+            catch (Exception) { }
+            try
+            {
+                textBoxUptime.Text = runCmd("cmd", "/c systeminfo | find \"System Boot Time: \"").Substring(27);
+            }
+            catch (Exception) { }
+            try
+            {
+                textBoxVersion.Text = runCmd("cmd", "/c ver");
+            }
+            catch (Exception) { }
 
             if (runCmd("wmic", "path SoftwareLicensingProduct where LicenseStatus='1' get Name").Contains("Windows"))
             {
