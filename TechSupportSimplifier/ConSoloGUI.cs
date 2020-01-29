@@ -24,8 +24,8 @@ namespace TechSupportSimplifier
             
             textBoxCPU.Text = runCmd("wmic","cpu get name").Substring(43);
             textBoxFirmware.Text = runCmd("wmic","bios get biosversion").Substring(62);
-            textBoxSerial.Text = runCmd("wmic", "bios get serialnumber").Substring(0);
-            textBoxMaxMem.Text = runCmd("wmic", "memphysical get maxcapacity").Substring(0);
+            textBoxSerial.Text = runCmd("wmic", "bios get serialnumber").Substring(26);
+            textBoxMaxMem.Text = runCmd("wmic", "memphysical get maxcapacity").Substring(13);
             textBoxUptime.Text = runCmd("cmd", "/c systeminfo | find \"System Boot Time: \"").Substring(27);
             textBoxVersion.Text = runCmd("cmd","/c ver");
 
@@ -402,6 +402,15 @@ namespace TechSupportSimplifier
         private void ButtonGrabMCT_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void ButtonDiskHealth_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                conSolo.StartProcess("powershell", "/c Get-Disk | select number, operation*, health*, friendly*, size");
+            }
+            catch (Exception) { }
         }
     }
 }
