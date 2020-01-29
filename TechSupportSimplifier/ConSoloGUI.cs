@@ -142,34 +142,9 @@ namespace TechSupportSimplifier
 
         private void buttonPUPs_Click(object sender, EventArgs e)
         {
-            // -- This is all borked because the console is stupid; I'll fix it later. --
-
-            conSolo.StartProcess("wmic", "product");
-            //string productOutput = runCmd("wmic", "product").ToLower();
-            //if (productOutput.Contains("mcafee"))
-            //{
-            //    conSolo.StartProcess("cmd","/c echo McAfee");
-            //}
-            //if (productOutput.Contains("ccleaner"))
-            //{
-            //    conSolo.StartProcess("cmd", "/c echo CCleaner");
-            //}
-            //if (productOutput.Contains("adwcleaner"))
-            //{
-            //    conSolo.StartProcess("cmd", "/c echo AdwCleaner");
-            //}
-            //if (productOutput.Contains("registry"))
-            //{
-            //    conSolo.StartProcess("cmd", "/c echo Potential registry cleaners");
-            //}
-            //if (productOutput.Contains("visual studio"))
-            //{
-            //    conSolo.StartProcess("cmd", "/c echo Visual Studio");
-            //}
-            //if (productOutput.Contains("driver"))
-            //{
-            //    conSolo.StartProcess("cmd", "/c echo Potential driver updaters/boosters");
-            //}
+            // Yes, I will sort out the no-space strings. Later though, it's not necessary.
+            conSolo.StartProcess("powershell", "-c $string=Get-ItemProperty HKLM:\\Software\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\* | Select-Object DisplayName, DisplayVersion, Publisher, InstallDate | Format-Table –AutoSize | Out-String; if($string | Select-String -Pattern \"mcafee\" -SimpleMatch) {echo \"McAfee\"}; if($string | Select-String -Pattern \"ccleaner\" -SimpleMatch) {echo \"CCleaner\"}; if($string | Select-String -Pattern \"adwclean\" -SimpleMatch) {echo \"AdwCleaner\"}; if($string | Select-String -Pattern \"registry\" -SimpleMatch) {echo \"Potential-RegistryCleaners\"};if($string | Select-String -Pattern \"driver\" -SimpleMatch) {echo \"Potential-DriverBoosters\"}; if($string | Select-String -Pattern \"booster\" -SimpleMatch) {echo \"Potential-DriverBoosters\"}; if($string | Select-String -Pattern \"Avast\" -SimpleMatch) {echo \"Avast\"}; if($string | Select-String -Pattern \"avg\" -SimpleMatch) {echo \"AVG\"}; if($string | Select-String -Pattern \"pinball\" -SimpleMatch) {echo \"Pinball\"}; if($string | Select-String -Pattern \"iobit\" -SimpleMatch) {echo \"IOBit utilities installed\"}; if($string | Select-String -Pattern \"chromium\" -SimpleMatch) {echo \"Chromium\"};");
+            
         }
 
         private void buttonAutomount_Click(object sender, EventArgs e)
