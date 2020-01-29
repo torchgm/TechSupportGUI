@@ -805,7 +805,7 @@
             this.MinimizeBox = false;
             this.Name = "AppBase";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
-            this.Text = "Not Microsoft Community Support App";
+            this.Text = "TSS Quick Command";
             this.Load += new System.EventHandler(this.AppBase_Load);
             this.BasicInfoPanel.ResumeLayout(false);
             this.BasicInfoPanel.PerformLayout();
