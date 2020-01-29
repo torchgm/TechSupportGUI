@@ -398,5 +398,10 @@ namespace TechSupportSimplifier
             }
             catch (Exception) { }
         }
+
+        private void ButtonGrabMCT_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

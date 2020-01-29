@@ -63,7 +63,7 @@
             this.button13 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.buttonMSIStart = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
+            this.buttonGrabMCT = new System.Windows.Forms.Button();
             this.buttonExplorer = new System.Windows.Forms.Button();
             this.buttonDetails = new System.Windows.Forms.Button();
             this.buttonReBCD = new System.Windows.Forms.Button();
@@ -225,7 +225,7 @@
             this.BasicInfoPanel.Controls.Add(this.button13);
             this.BasicInfoPanel.Controls.Add(this.button14);
             this.BasicInfoPanel.Controls.Add(this.buttonMSIStart);
-            this.BasicInfoPanel.Controls.Add(this.button16);
+            this.BasicInfoPanel.Controls.Add(this.buttonGrabMCT);
             this.BasicInfoPanel.Controls.Add(this.buttonExplorer);
             this.BasicInfoPanel.Controls.Add(this.buttonDetails);
             this.BasicInfoPanel.Controls.Add(this.buttonReBCD);
@@ -451,13 +451,15 @@
             this.buttonMSIStart.UseVisualStyleBackColor = true;
             this.buttonMSIStart.Click += new System.EventHandler(this.buttonMSIStart_Click);
             // 
-            // button16
+            // buttonGrabMCT
             // 
-            this.button16.Location = new System.Drawing.Point(648, 254);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(89, 23);
-            this.button16.TabIndex = 50;
-            this.button16.UseVisualStyleBackColor = true;
+            this.buttonGrabMCT.Location = new System.Drawing.Point(648, 254);
+            this.buttonGrabMCT.Name = "buttonGrabMCT";
+            this.buttonGrabMCT.Size = new System.Drawing.Size(89, 23);
+            this.buttonGrabMCT.TabIndex = 50;
+            this.buttonGrabMCT.Text = "Start MCT";
+            this.buttonGrabMCT.UseVisualStyleBackColor = true;
+            this.buttonGrabMCT.Click += new System.EventHandler(this.ButtonGrabMCT_Click);
             // 
             // buttonExplorer
             // 
@@ -696,6 +698,7 @@
             this.conSolo.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.conSolo.IsInputEnabled = true;
             this.conSolo.Location = new System.Drawing.Point(99, 221);
+            this.conSolo.Margin = new System.Windows.Forms.Padding(6);
             this.conSolo.Name = "conSolo";
             this.conSolo.SendKeyboardCommandsToProcess = false;
             this.conSolo.ShowDiagnostics = false;
@@ -790,15 +793,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(844, 572);
+            this.ClientSize = new System.Drawing.Size(842, 572);
             this.Controls.Add(this.BasicInfoPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(850, 597);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(850, 597);
             this.Name = "AppBase";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.Text = "Not Microsoft Community Support App";
             this.Load += new System.EventHandler(this.AppBase_Load);
             this.BasicInfoPanel.ResumeLayout(false);
@@ -850,7 +852,7 @@
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button buttonMSIStart;
-        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Button buttonGrabMCT;
         private System.Windows.Forms.Button buttonExplorer;
         private System.Windows.Forms.Button buttonDetails;
         private System.Windows.Forms.Button buttonReBCD;
