@@ -49,7 +49,7 @@ namespace TechSupportSimplifier
 
 
 
-        // -- Something something make a new method for magicing processes. --
+        // -- Something something make a new method for magicing processes maybe. --
 
         private string runCmd(string exe, string args)
         {
