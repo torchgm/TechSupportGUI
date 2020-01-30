@@ -60,9 +60,11 @@ namespace TechSupportSimplifier
             {
                 textBoxActivated.Text = "No";
             }
-
-            textBoxLicense.Text = "sorry this is borked rn";
-
+            try
+            {
+                textBoxLicense.Text = runCmd("cmd", "/c wmic os get Caption").Substring(63);
+            }
+            catch (Exception) { }
             try
             {
                 conSolo.StartProcess("cmd", "/c echo Be careful! These buttons are not to be played with. They can alter settings, delete files, change your version and deactivate Windows. Use them at your own risk.");
