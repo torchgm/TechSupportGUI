@@ -23,22 +23,28 @@ namespace TechSupportSimplifier
         {
             try
             {
-                textBoxCPU.Text = runCmd("wmic", "cpu get name").Substring(43);
+                string CPU = runCmd("wmic", "cpu get name");
+                String[] CPUCount = CPU.Split(new String[] { Environment.NewLine }, StringSplitOptions.None);
+                textBoxCPU.Text = CPU.Substring((CPU.Length / CPUCount.Length) + 15);
             }
             catch (Exception) { }
             try
             {
-                textBoxFirmware.Text = runCmd("wmic", "bios get biosversion").Substring(62);
+                string Firmware = runCmd("wmic", "bios get biosversion");
+                textBoxFirmware.Text = Firmware.Substring((Firmware.Length / 2) - 1);
             }
             catch (Exception) { }
             try
             {
-                textBoxSerial.Text = runCmd("wmic", "bios get serialnumber").Substring(26);
+                string Serial = runCmd("wmic", "bios get serialnumber");
+                textBoxSerial.Text = Serial.Substring((Serial.Length / 2) - 1);
             }
             catch (Exception) { }
             try
             {
-                textBoxMaxMem.Text = runCmd("wmic", "memphysical get maxcapacity").Substring(13);
+                String MaxMem = runCmd("wmic", "memphysical get maxcapacity");
+                String[] MaxMemCount = MaxMem.Split(new String[] { Environment.NewLine }, StringSplitOptions.None);
+                textBoxMaxMem.Text = MaxMem.Substring((MaxMem.Length / MaxMemCount.Length) + MaxMemCount.Length);
             }
             catch (Exception) { }
             try
@@ -48,7 +54,7 @@ namespace TechSupportSimplifier
             catch (Exception) { }
             try
             {
-                textBoxVersion.Text = runCmd("cmd", "/c ver");
+                textBoxVersion.Text = runCmd("cmd", "/c ver").Substring(20);
             }
             catch (Exception) { }
 
@@ -62,7 +68,8 @@ namespace TechSupportSimplifier
             }
             try
             {
-                textBoxLicense.Text = runCmd("cmd", "/c wmic os get Caption").Substring(63);
+                string License = runCmd("wmic", "os get caption");
+                textBoxLicense.Text = License.Substring((License.Length / 2) + 17);
             }
             catch (Exception) { }
             try
