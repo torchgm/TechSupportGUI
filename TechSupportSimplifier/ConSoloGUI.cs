@@ -19,8 +19,17 @@ namespace TechSupportSimplifier
             InitializeComponent();
         }
 
+
+
         private void AppBase_Load(object sender, EventArgs e)
         {
+            // Strings for Things
+            string WarningUserIdiocy = "Be careful! These buttons are not to be played with. They can alter settings, delete files, change your version and deactivate Windows. Use them at your own risk.";
+            string WarningEOLWindows = "You are currently using an outdated and unsupported version of Windows! Please consider switching to a supported version.";
+            string WarningNeedUpdate = "You are currently using a critically outdated version of Windows 10! Please consider updating to the latest version to stay safe, bug-free and secure.";
+            string License; // idk what all those different types of variables are but i need this here so i can read from it later so dont question it
+
+
             try
             {
                 string CPU = runCmd("wmic", "cpu get name");
@@ -68,20 +77,43 @@ namespace TechSupportSimplifier
             }
             try
             {
-                string License = runCmd("wmic", "os get caption");
+                License = runCmd("wmic", "os get caption");
                 textBoxLicense.Text = License.Substring((License.Length / 2) + 17);
+                
             }
-            catch (Exception) { }
+            catch (Exception) { License = "10"; } // so if wmic fails me i don't break even more stuff later
             try
             {
-                conSolo.StartProcess("cmd", "/c echo Be careful! These buttons are not to be played with. They can alter settings, delete files, change your version and deactivate Windows. Use them at your own risk.");
+                if (!(License.Contains("8.1") || License.Contains("10") || License.Contains("Server")))
+                {
+                    conSolo.StartProcess("cmd", "/c echo " + WarningUserIdiocy + " & echo/ & echo " + WarningEOLWindows);
+                }
+                else if(!(License.Contains("Insider")))
+                {
+                    if ((Convert.ToInt32(runCmd("powershell", "/c powershell -EncodedCommand MgAwADAANAA=")) < 1809) && !(License.Contains("10 Education") || License.Contains("10 Enterprise")))
+                    {
+                        conSolo.StartProcess("cmd", "/c echo " + WarningUserIdiocy + " & echo/ & echo " + WarningNeedUpdate);
+                    }
+                    if (Convert.ToInt32(runCmd("powershell", "/c powershell -EncodedCommand MgAwADAANAA=")) < 1709 && (License.Contains("10 Education") || License.Contains("10 Enterprise")))
+                    {
+                        conSolo.StartProcess("cmd", "/c echo " + WarningUserIdiocy + " & echo/ & echo " + WarningNeedUpdate);
+                    }
+                    else
+                    {
+                        conSolo.StartProcess("cmd", "/c echo " + WarningUserIdiocy);
+                    }
+                }
+                else
+                {
+                    conSolo.StartProcess("cmd", "/c echo " + WarningUserIdiocy);
+                }
             }
             catch (Exception) { }
         }
 
 
 
-        // -- Something something make a new method for magicing processes maybe. --
+        // Something something make a new method for magicing processes maybe.
 
         private string runCmd(string exe, string args)
         {
